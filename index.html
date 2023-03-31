@@ -125,12 +125,15 @@
 									<span>Messaggio inviato</span>
 								</div> -->
 						</div>
-						<div class="footer_chat">
-							<div class="icon">
+						<div class="footer_chat d-flex align-items-md-center">
+							<div class="icon p-4 fs-4">
 								<i class="fa-regular fa-face-smile"></i>
 							</div>
-							<div>
-								<input v-if="activeContact !== -1" type="text" v-model.trim="userMessage" @keyup.enter="messagePusch(activeContact)">
+							<div class="col">
+								<input class="w-100 p-2 border-0" placeholder="Scrivi un messaggio"  v-if="activeContact !== -1" type="text" v-model.trim="userMessage" @keyup.enter="messagePusch(activeContact)">
+							</div>
+							<div class="icon p-4 fs-4">
+								<i class="fa-solid fa-microphone"></i>
 							</div>
 
 						</div>

@@ -201,7 +201,7 @@ createApp({
             let currentDate = `${day}-${month}-${year}`;
             return currentDate
         },
-        currentHour(){
+        currentHour() {
             const d = new Date();
             let hour = d.getHours()
             let minut = d.getMinutes()
@@ -219,13 +219,45 @@ createApp({
                 status: 'sent'
             }
             console.log(structureMssageUser);
+            console.log(this.contacts[1].messages[2].message);
             console.log(this.contacts[0].messages);
+            if (this.userMessage.length > 0) {
+                this.contacts[index].messages.push(structureMssageUser)
+                this.userMessage = ''
+                setTimeout(() => {
+                    this.autoMessage(index)
+                }, 1000);
+            }
+        },
+
+        randomContactArrayNumber() {
+            let min = 0
+            let max = 7
+            const random =  Math.floor(Math.random() * (max - min + 1) ) + min;
+            return random;
+        },
+        randomMessageArrayNumber() {
+            let min = 0
+            let max = this.contacts[this.randomContactArrayNumber()].messages.length
+            const random =  Math.floor(Math.random() * (max - min ) ) + min;
+            return random;
+        },
+
+        autoMessage(index) {
+            console.log('messaggio automatico');
+            const structureMssageUser = {
+                date: `${this.currentDate()}, ${this.currentHour()}`,
+                message: this.contacts[this.randomContactArrayNumber()].messages[this.randomMessageArrayNumber()].message,
+                status: 'received'
+            }
             this.contacts[index].messages.push(structureMssageUser)
-            this.userMessage = ''
+
         }
 
     },
     mounted() {
         console.log(this.currentHour())
+        console.log(this.randomContactArrayNumber())
+        console.log(this.randomMessageArrayNumber())
     },
 }).mount('#app')
