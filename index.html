@@ -75,7 +75,7 @@
                                         <div class="info_User col d-flex justify-content-between ">
                                             <div>
                                                 <span>{{contact.name}}</span>
-                                                <span class="d-block txt_gray">Ultimo messaggio inviato</span>
+                                                <span class="d-block txt_gray">ultimo {{getLastMessage(contact.messages) }} </span>
                                             </div>
 
                                             <div class="icon_option fs-4">
@@ -84,7 +84,6 @@
                                         </div>
                                     </div>
                                 </li>
-
                             </ul>
                         </div>
 
@@ -117,8 +116,8 @@
                         <div class="main_chat">
                             <!-- ciclo ull'array message, successivamente in base se si tratta di status send o received gli assegno una classe per farlo soparire a destra con background verde(inviato) o sinistra con background bianco(ricevuto) -->
 
-                            <div class="msg" v-for="msg in contact.messages">
-                                <span>{{msg.message}}</span>
+                            <div class="msg" >
+                                <span></span>
                             </div>
                         </div>
                     </div>

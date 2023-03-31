@@ -170,14 +170,21 @@ createApp({
 
         }
     },
-
-    mounted() {
-
-    },
+    
     methods: {
         selectImage(i){
             console.log(i);
             this.activeContact = i
+        },
+        getLastMessage(messages) {
+            console.log(messages)
+            const lastMsgIndex = messages.length - 1
+            return messages[lastMsgIndex].message
         }
+
+
+    },
+    mounted() {
+        
     },
 }).mount('#app')
