@@ -17,9 +17,10 @@ main {
 }
 
 .container {
-    height: 1000px !important;
+    width: 1500px!important;
+    height: 1000px!important;
     background-color: var(--bgContact--);
     position: absolute;
-    top: -100px;
-    left: 50%;
+    top: -150px;
+    right: 16%;
 }
