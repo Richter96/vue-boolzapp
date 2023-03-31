@@ -126,4 +126,9 @@ img {
 /* #reagio chat */
 .header_chat {
     background-color: var(--bgSlideBarContact--);
+    height: 80px;
+}
+
+.main_chat {
+    background-image: url(../../img/mine.jpg);
 }

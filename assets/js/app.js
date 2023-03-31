@@ -3,7 +3,7 @@ const { createApp } = Vue
 createApp({
     data() {
         return {
-            activeImage: -1,
+            activeContact: -1,
             contacts: [
                 {
                     name: 'Michele',
@@ -177,7 +177,7 @@ createApp({
     methods: {
         selectImage(i){
             console.log(i);
-            this.activeImage = i
+            this.activeContact = i
         }
     },
 }).mount('#app')
