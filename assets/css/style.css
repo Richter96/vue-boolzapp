@@ -133,3 +133,11 @@ img {
     background-image: url(../../img/mine.jpg);
     background-size: cover;
 }
+
+.msg_received {
+    background-color: palegreen;
+}
+
+msg_Sent {
+    background-color: var(--bgContact--);
+}

@@ -115,7 +115,11 @@
                         </div>
                         <!-- main chat -->
                         <div class="main_chat">
-                            
+                            <!-- ciclo ull'array message, successivamente in base se si tratta di status send o received gli assegno una classe per farlo soparire a destra con background verde(inviato) o sinistra con background bianco(ricevuto) -->
+
+                            <div class="msg" v-for="msg in contact.messages">
+                                <span>{{msg.message}}</span>
+                            </div>
                         </div>
                     </div>
                 </div>
