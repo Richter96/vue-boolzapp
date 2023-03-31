@@ -3,12 +3,13 @@
     --bgHeader--: #009688;
     --bgmain--: #dadbd3;
     --bgAreaText--: #f3eeea;
-    --bgNotificatioarea--:#8edafc;
-    --iconNotification--:#8edafc;
+    --bgNotificatioarea--: #8edafc;
+    --iconNotification--: #8edafc;
+    --bgSlideBarContact--:#eaeaea;
 }
 
 /* #region debug */
-.debug .sidebar_contact  {
+.debug .sidebar_contact {
     background-color: palegreen;
 }
 
@@ -35,6 +36,7 @@ img {
     height: 1000px;
     position: relative;
 }
+
 .row {
     width: 100%;
     height: 100%;
@@ -52,21 +54,21 @@ img {
 .sidebar_contact {
     height: 100%;
     width: 40%;
-    background-color: var(--bgAreaText--);
+    background-color: var(--bgSlideBarContact--);
 }
 
-.container_chat{
-    width: 60%;
+.container_chat {
+    overflow-y: scroll;
+    height: calc(100% - 206px);
 }
+
 /* #region user */
 
-.user {
-    background-color: var(--bgContact--);
-}
-.img_avatar{
+.img_avatar {
     width: 5rem;
     border-radius: 50%;
 }
+
 .img_avatar img {
     border-radius: 50%;
 }
@@ -74,9 +76,12 @@ img {
 .info_User i {
     color: #92929284;
 }
+
 /* #endregion user */
 
-
+.search_bar{
+    background-color: var(--bgSlideBarContact--);
+}
 
 /* #region notification */
 .new_message {
@@ -92,10 +97,12 @@ img {
     margin: 0.6rem;
 }
 
-.w_20{
+.w_20 {
     width: 20%;
 }
-.w_80{
-    width: 78%;
+
+.w_80 {
+    width: 79%;
 }
+
 /* #endregion notification */
