@@ -180,11 +180,20 @@ createApp({
             console.log(messages)
             const lastMsgIndex = messages.length - 1
             return messages[lastMsgIndex].message
+        },
+        getHourlastMessage(messages){
+            const lastMsgIndex = messages.length - 1
+            const dateLastMessage = messages[lastMsgIndex].date
+            console.log(dateLastMessage)
+            const horsMessage = dateLastMessage.split(' ')[1]
+            console.log(horsMessage);
+            const hors = horsMessage.split(':')[0]
+            const Minuts = horsMessage.split(':')[1]
+            return `${hors}:${Minuts}`
         }
-
 
     },
     mounted() {
-        
+
     },
 }).mount('#app')
