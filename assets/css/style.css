@@ -87,12 +87,13 @@ img {
     background-color: var(--bgSlideBarContact--);
 }
 
-.container_chat {
+.container_contacts {
     overflow-y: scroll;
     height: calc(100% - 206px);
+    background-color: var(--bgContact--);
 }
 
-.container_chat ul {
+.container_contacts ul {
     padding: 1rem 0.5rem;
 }
 /* #region notification */
