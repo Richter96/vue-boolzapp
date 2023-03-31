@@ -210,7 +210,19 @@ createApp({
             let currentTime = `${hour}:${minut}`
             return currentTime;
         },
-        
+        messagePusch(index) {
+            console.log(index)
+            console.log(this.userMessage);
+            const structureMssageUser = {
+                date: `${this.currentDate()}, ${this.currentHour()}`,
+                message: this.userMessage,
+                status: 'sent'
+            }
+            console.log(structureMssageUser);
+            console.log(this.contacts[0].messages);
+            this.contacts[index].messages.push(structureMssageUser)
+            this.userMessage = ''
+        }
 
     },
     mounted() {
