@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             activeContact: -1,
+            userMessage: '',
             contacts: [
                 {
                     name: 'Michele',
@@ -170,9 +171,9 @@ createApp({
 
         }
     },
-    
+
     methods: {
-        selectImage(i){
+        selectImage(i) {
             console.log(i);
             this.activeContact = i
         },
@@ -181,20 +182,38 @@ createApp({
             const lastMsgIndex = messages.length - 1
             return messages[lastMsgIndex].message
         },
-        getHourlastMessage(messages){
+        getHourlastMessage(messages) {
             const lastMsgIndex = messages.length - 1
             const dateLastMessage = messages[lastMsgIndex].date
             // console.log(dateLastMessage)
-            const horsMessage = dateLastMessage.split(' ')[1]
-            // console.log(horsMessage);
-            const hors = horsMessage.split(':')[0]
-            const Minuts = horsMessage.split(':')[1]
-            return `${hors}:${Minuts}`
-        }
+            const hourMessage = dateLastMessage.split(' ')[1]
+            // console.log(hourMessage);
+            const hour = hourMessage.split(':')[0]
+            const Minuts = hourMessage.split(':')[1]
+            return `${hour}:${Minuts}`
+        },
+        currentDate() {
+            const date = new Date();
+
+            let day = date.getDate();
+            let month = date.getMonth() + 1;
+            let year = date.getFullYear();
+            let currentDate = `${day}-${month}-${year}`;
+            return currentDate
+        },
+        currentHour(){
+            const d = new Date();
+            let hour = d.getHours()
+            let minut = d.getMinutes()
+            console.log(hour);
+            console.log(minut);
+            let currentTime = `${hour}:${minut}`
+            return currentTime;
+        },
+        
 
     },
     mounted() {
-        const messages = this.contacts[0].messages
-        console.log(messages);
+        console.log(this.currentHour())
     },
 }).mount('#app')

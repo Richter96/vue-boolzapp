@@ -157,13 +157,15 @@ img {
 
 .main_chat {
     background-image: url(../../img/mine.jpg);
-    height: calc(100% - 80px);
+    height: calc(100% - 160px);
 }
 
 .msg_received {
     background-color: palegreen;
 }
 
-msg_Sent {
-    background-color: var(--bgContact--);
+.footer_chat{
+    background-color: var(--bgAreaText--);
+    height: 80px;
+    display: flex;
 }

@@ -113,9 +113,9 @@
 							<div v-else></div>
 						</div>
 						<!-- main chat -->
-						<div class="main_chat" v-if="activeContact !== - 1">
+						<div class="main_chat" >
 							<!-- ciclo ull'array message, successivamente in base se si tratta di status send o received gli assegno una classe per farlo soparire a destra con background verde(inviato) o sinistra con background bianco(ricevuto) -->
-							<div class="msg" v-for="(message, index) in contacts[activeContact].messages" :class="message.status === 'sent' ? 'sent' : 'received' ">
+							<div class="msg" v-if="activeContact !== - 1" v-for="(message, index) in contacts[activeContact].messages" :class="message.status === 'sent' ? 'sent' : 'received' ">
 								<span >{{message.message}}</span>
 							</div>
 							<!-- <div class="msg received ">
@@ -125,9 +125,16 @@
 									<span>Messaggio inviato</span>
 								</div> -->
 						</div>
-						<div v-else>
+						<div class="footer_chat">
+							<div class="icon">
+								<i class="fa-regular fa-face-smile"></i>
+							</div>
+							<div>
+								<input v-if="activeContact !== -1" type="text" v-model.trim="userMessage" @keyup.enter="messagePusch(activeContact)">
+							</div>
 
 						</div>
+
 					</div>
 				</div>
 			</div>
