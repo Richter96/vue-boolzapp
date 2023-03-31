@@ -1,12 +1,25 @@
-
 :root {
-    --bgChat--:#ffffff;
-    --bgHeader--:#009688;
-    --bgmain--:#dadbd3;
-    --bgAreaText--:#dadbd3;
+    --bgContact--: #ffffff;
+    --bgHeader--: #009688;
+    --bgmain--: #dadbd3;
+    --bgAreaText--: #f3eeea;
 }
 
 header {
-    height: 100px;
-    background-color:var(--bgHeader--) ;
+    height: 200px;
+    background-color: var(--bgHeader--);
+}
+
+main {
+    height: calc( 100vh - 200px);
+    background-color: var(--bgmain--);
+    position: relative;
+}
+
+.container {
+    height: 1000px !important;
+    background-color: var(--bgContact--);
+    position: absolute;
+    top: -100px;
+    left: 50%;
 }
