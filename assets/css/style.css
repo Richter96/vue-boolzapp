@@ -131,4 +131,5 @@ img {
 
 .main_chat {
     background-image: url(../../img/mine.jpg);
+    background-size: cover;
 }
