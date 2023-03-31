@@ -166,7 +166,7 @@ createApp({
                         }
                     ],
                 }
-            ]
+            ],
 
         }
     },
@@ -177,16 +177,16 @@ createApp({
             this.activeContact = i
         },
         getLastMessage(messages) {
-            console.log(messages)
+            // console.log(messages)
             const lastMsgIndex = messages.length - 1
             return messages[lastMsgIndex].message
         },
         getHourlastMessage(messages){
             const lastMsgIndex = messages.length - 1
             const dateLastMessage = messages[lastMsgIndex].date
-            console.log(dateLastMessage)
+            // console.log(dateLastMessage)
             const horsMessage = dateLastMessage.split(' ')[1]
-            console.log(horsMessage);
+            // console.log(horsMessage);
             const hors = horsMessage.split(':')[0]
             const Minuts = horsMessage.split(':')[1]
             return `${hors}:${Minuts}`
@@ -194,6 +194,7 @@ createApp({
 
     },
     mounted() {
-
+        const messages = this.contacts[0].messages
+        console.log(messages);
     },
 }).mount('#app')

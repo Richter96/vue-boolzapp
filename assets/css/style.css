@@ -6,6 +6,8 @@
     --bgNotificatioarea--: #8edafc;
     --iconNotification--: #8edafc;
     --bgSlideBarContact--:#eaeaea;
+    --bgMessageSent--:#d5f9ba;
+    --bgMessageReceved:#ffffff;
 }
 
 /* #region debug */
@@ -122,6 +124,30 @@ img {
 
 
 
+.msg.sent {
+    display: flex;
+    justify-content: end;
+    padding: 2rem 10% 2rem 30%;
+}
+.msg.sent span {
+    background-color: var(--bgMessageSent--);
+    padding: 1rem;
+    border-radius: 0.8rem;
+}
+
+.msg.received {
+    display: flex;
+    justify-content: start;
+    padding: 2rem 30% 2rem 10%;
+}
+.msg.received span {
+    background-color: var(--bgMessageReceved);
+    padding: 1rem;
+    border-radius: 0.8rem;
+}
+
+
+
 
 /* #reagio chat */
 .header_chat {
@@ -131,7 +157,7 @@ img {
 
 .main_chat {
     background-image: url(../../img/mine.jpg);
-    background-size: cover;
+    height: calc(100% - 80px);
 }
 
 .msg_received {
