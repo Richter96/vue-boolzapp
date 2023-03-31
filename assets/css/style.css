@@ -5,22 +5,65 @@
     --bgAreaText--: #f3eeea;
 }
 
+/* #region debug */
+.debug .sidebar_contact  {
+    background-color: palegreen;
+}
+
+
+/* #endregion debug */
+
+
 header {
     height: 200px;
     background-color: var(--bgHeader--);
 }
 
 main {
-    height: calc( 100vh - 200px);
+    height: calc(100vh - 200px);
     background-color: var(--bgmain--);
-    position: relative;
+}
+
+img {
+    max-width: 100%;
 }
 
 .container {
-    width: 1500px!important;
-    height: 1000px!important;
+    width: 1500px;
+    height: 1000px;
+    position: relative;
+}
+.row {
+    width: 100%;
+    height: 100%;
+}
+
+.boolzapper {
+    height: 100%;
+    width: 100%;
     background-color: var(--bgContact--);
     position: absolute;
     top: -150px;
-    right: 16%;
+    left: 0;
+}
+
+.sidebar_contact {
+    height: 100%;
+    width: 40%;
+}
+
+.container_chat{
+    width: 60%;
+}
+
+.user {
+    background-color: var(--bgContact--);
+
+}
+.img_avatar{
+    width: 5rem;
+    border-radius: 50%;
+}
+.img_avatar img {
+    border-radius: 50%;
 }
