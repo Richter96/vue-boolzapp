@@ -4,13 +4,9 @@
     --bgHeader--:#009688;
     --bgmain--:#dadbd3;
     --bgAreaText--:#dadbd3;
-
-
-
-
 }
 
 header {
     height: 100px;
-    background-color:var(-) ;
+    background-color:var(--bgHeader--) ;
 }
