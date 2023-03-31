@@ -53,13 +53,13 @@ img {
 
 .sidebar_contact {
     height: 100%;
-    width: 40%;
+    max-width: 40%;
     background-color: var(--bgSlideBarContact--);
 }
 
-.container_chat {
-    overflow-y: scroll;
-    height: calc(100% - 206px);
+
+.txt_gray{
+    color: rgb(177, 177, 177);
 }
 
 /* #region user */
@@ -77,12 +77,24 @@ img {
     color: #92929284;
 }
 
+.active {
+    background-color: #00968732!important;
+}
+
 /* #endregion user */
 
 .search_bar{
     background-color: var(--bgSlideBarContact--);
 }
 
+.container_chat {
+    overflow-y: scroll;
+    height: calc(100% - 206px);
+}
+
+.container_chat ul {
+    padding: 1rem 0.5rem;
+}
 /* #region notification */
 .new_message {
     background-color: var(--bgNotificatioarea--);
@@ -106,3 +118,11 @@ img {
 }
 
 /* #endregion notification */
+
+
+
+
+/* #reagio chat */
+.header_chat {
+    background-color: var(--bgSlideBarContact--);
+}
