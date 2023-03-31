@@ -52,6 +52,7 @@ img {
 .sidebar_contact {
     height: 100%;
     width: 40%;
+    background-color: var(--bgAreaText--);
 }
 
 .container_chat{
@@ -61,7 +62,6 @@ img {
 
 .user {
     background-color: var(--bgContact--);
-
 }
 .img_avatar{
     width: 5rem;
@@ -69,6 +69,10 @@ img {
 }
 .img_avatar img {
     border-radius: 50%;
+}
+
+.info_User i {
+    color: #92929284;
 }
 /* #endregion user */
 
@@ -81,16 +85,17 @@ img {
 
 .icon_ring {
     background-color: #ffffff;
-    width: 5rem;
+    width: 4rem;
     aspect-ratio: 1;
     border-radius: 50%;
     color: var(--iconNotification--);
+    margin: 0.6rem;
 }
 
 .w_20{
     width: 20%;
 }
 .w_80{
-    width: 80%;
+    width: 78%;
 }
 /* #endregion notification */
