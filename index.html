@@ -21,19 +21,35 @@
         <main>
             <div class="container">
                 <div class="boolzapper">
-                        <div class="sidebar_contact border-1 col">
-                            <div class="user">
-                                <div class="img_avatar p-2">
-                                    <img src="./assets/img/avatar_io.jpg" alt="">
-                                </div>
-                                <div class="info User">
-
-                                </div>
+                    <div class="sidebar_contact border-1 col">
+                        <!-- user icon and info, Principal user -->
+                        <div class="user d-flex align-items-baseline">
+                            <div class="img_avatar p-2">
+                                <img src="./assets/img/avatar_io.jpg" alt="">
+                            </div>
+                            <div class="info_User">
+                                <span>Sofia</span>
                             </div>
                         </div>
-                        <div class="container_chat col">
-    
+                        <!-- notification -->
+                        <div class="new_message">
+                            <div class="icon_ring d-flex justify-content-center align-items-center">
+                                <i class="fa-solid fa-bell-slash fs-3"></i>
+                            </div>
                         </div>
+                        <!-- search bar -->
+                        <div class="input-group p-1">
+                            <button type="button" class="btn btn-primary bg-light text-black w_20 border-0">
+                              <i class="fas fa-search"></i>
+                            </button>
+                            <div class="form-outline w_80">
+                              <input id="search-focus" type="search" id="form1" class="form-control rounded-0" placeholder="Cerca o inizia una nuova chat" />
+                            </div>
+                          </div>
+                    </div>
+                    <div class="container_chat col">
+
+                    </div>
                 </div>
             </div>
         </main>

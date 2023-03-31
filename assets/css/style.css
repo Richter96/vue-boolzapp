@@ -3,6 +3,8 @@
     --bgHeader--: #009688;
     --bgmain--: #dadbd3;
     --bgAreaText--: #f3eeea;
+    --bgNotificatioarea--:#8edafc;
+    --iconNotification--:#8edafc;
 }
 
 /* #region debug */
@@ -55,6 +57,7 @@ img {
 .container_chat{
     width: 60%;
 }
+/* #region user */
 
 .user {
     background-color: var(--bgContact--);
@@ -67,3 +70,27 @@ img {
 .img_avatar img {
     border-radius: 50%;
 }
+/* #endregion user */
+
+
+
+/* #region notification */
+.new_message {
+    background-color: var(--bgNotificatioarea--);
+}
+
+.icon_ring {
+    background-color: #ffffff;
+    width: 5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    color: var(--iconNotification--);
+}
+
+.w_20{
+    width: 20%;
+}
+.w_80{
+    width: 80%;
+}
+/* #endregion notification */
