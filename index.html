@@ -119,16 +119,24 @@
 							<!-- ciclo ull'array message, successivamente in base se si tratta di status send o received gli assegno una classe per farlo soparire a destra con background verde(inviato) o sinistra con background bianco(ricevuto) -->
 							<div class="msg" v-if="activeContact !== - 1"
 								 v-for="(message, index) in contacts[activeContact].messages"
-								 :class="message.status === 'sent' ? 'sent' : 'received' ">
-								 <div class="userMess position-relative">
+								 :class="message.status === 'sent' ? 'sent' : 'received'">
+								 <div class="userMess position-relative" @mouseover="overMessage()" @mouseleave="leaveMessage()" >
 									 <span class="pe-5">
 										 {{message.message}}
 									 </span>
 									 <span class="txt_gray hour p-1 fs-6">
 										{{getHourlastMessage(contacts[activeContact].messages)}} 
 									 </span>
+									 <div>
+										<button class="btn_option txt_gray border-0 bg-transparent" type="button" data-bs-toggle="dropdown" aria-expanded="false" :class="d_none ? 'd-none' :''">
+										<i class="fa-solid fa-ellipsis-vertical px-2"></i>
+										</button>
+										<ul class="dropdown-menu">
+										  <li><button class="dropdown-item" type="button">Maggiori informazioni</button></li>
+										  <li><button class="dropdown-item" type="button">Elimina messaggio</button></li>
+										</ul>
+									  </div>
 								 </div>
-								
 							</div>
 							<!-- <div class="msg received ">
 									<span class="">Messaggio ricevuto</span>

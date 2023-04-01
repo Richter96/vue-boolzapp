@@ -7,6 +7,7 @@ createApp({
             userMessage: '',
             areaTextDisabled: true,
             option:'',
+            d_none: true ,
             contacts: [
                 {
                     name: 'Michele',
@@ -175,6 +176,16 @@ createApp({
     },
 
     methods: {
+        overMessage(){
+            console.log('hover');
+            this.d_none = false;
+            console.log(this.d_none);
+        },
+        leaveMessage(){
+            this.d_none = true;
+        },
+
+
         selectImage(i) {
             console.log(i);
             this.activeContact = i
@@ -234,7 +245,6 @@ createApp({
                 }, 1000);
             }
         },
-
         randomContactArrayNumber() {
             let min = 0
             let max = 7

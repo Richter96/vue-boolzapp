@@ -177,3 +177,13 @@ img {
     height: 80px;
     display: flex;
 }
+
+.btn_option {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.btn_option i {
+    font-size: 1rem;
+}
