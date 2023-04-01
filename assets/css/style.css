@@ -126,9 +126,9 @@ img {
 .msg.sent {
     display: flex;
     justify-content: end;
-    padding: 1rem 5% 1rem 30%;
+    padding: 0.5rem 5% 0.5rem 30%;
 }
-.msg.sent span {
+.msg.sent .userMess {
     background-color: var(--bgMessageSent--);
     padding: 1rem;
     border-radius: 0.8rem;
@@ -137,12 +137,18 @@ img {
 .msg.received {
     display: flex;
     justify-content: start;
-    padding: 1rem 30% 1rem 5%;
+    padding: 0.5rem 30% 0.5rem 5%;
 }
-.msg.received span {
+.msg.received .userMess {
     background-color: var(--bgMessageReceved);
     padding: 1rem;
     border-radius: 0.8rem;
+}
+
+.hour{
+    position: absolute;
+    right: 0;
+    bottom: 0;
 }
 
 

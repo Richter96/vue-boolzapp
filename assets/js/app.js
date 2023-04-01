@@ -6,7 +6,7 @@ createApp({
             activeContact: -1,
             userMessage: '',
             areaTextDisabled: true,
-
+            option:'',
             contacts: [
                 {
                     name: 'Michele',
