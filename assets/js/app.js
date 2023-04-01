@@ -176,15 +176,29 @@ createApp({
     },
 
     methods: {
+        verifyNoMessage(){
+            if(this.contacts[this.activeContact].messages.length === 0){
+                this.contacts[this.activeContact].visible = false
+            }
+        },
+        verifyMsg(){
+            if(this.activeContact !== -1){
+                return true 
+            }
+        },
         overMessage(){
-            console.log('hover');
+            // console.log('hover');
             this.d_none = false;
-            console.log(this.d_none);
+            // console.log(this.d_none);
         },
         leaveMessage(){
             this.d_none = true;
         },
-
+        delateMessage(i){
+            console.log(i);
+            this.contacts[this.activeContact].messages.splice(i, 1)
+            this.verifyNoMessage()
+        },
 
         selectImage(i) {
             console.log(i);
@@ -193,20 +207,25 @@ createApp({
                 this.areaTextDisabled= false
             }
         },
+        
+
         getLastMessage(messages) {
+                const lastMsgIndex = messages.length - 1
+                return messages[lastMsgIndex].message
+
             // console.log(messages)
-            const lastMsgIndex = messages.length - 1
-            return messages[lastMsgIndex].message
         },
         getHourlastMessage(messages) {
-            const lastMsgIndex = messages.length - 1
-            const dateLastMessage = messages[lastMsgIndex].date
-            // console.log(dateLastMessage)
-            const hourMessage = dateLastMessage.split(' ')[1]
-            // console.log(hourMessage);
-            const hour = hourMessage.split(':')[0]
-            const Minuts = hourMessage.split(':')[1]
-            return `${hour}:${Minuts}`
+            
+                const lastMsgIndex = messages.length - 1
+                const dateLastMessage = messages[lastMsgIndex].date
+                // console.log(dateLastMessage)
+                const hourMessage = dateLastMessage.split(' ')[1]
+                // console.log(hourMessage);
+                const hour = hourMessage.split(':')[0]
+                const Minuts = hourMessage.split(':')[1]
+                return `${hour}:${Minuts}`
+            
         },
         currentDate() {
             const date = new Date();
@@ -272,8 +291,10 @@ createApp({
 
     },
     mounted() {
-        console.log(this.currentHour())
-        console.log(this.randomContactArrayNumber())
-        console.log(this.randomMessageArrayNumber())
+        // console.log(this.currentHour())
+        // console.log(this.randomContactArrayNumber())
+        // console.log(this.randomMessageArrayNumber())
+        console.log(this.verifyMsg());
+
     },
 }).mount('#app')
