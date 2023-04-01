@@ -5,6 +5,8 @@ createApp({
         return {
             activeContact: -1,
             userMessage: '',
+            areaTextDisabled: true,
+
             contacts: [
                 {
                     name: 'Michele',
@@ -176,6 +178,9 @@ createApp({
         selectImage(i) {
             console.log(i);
             this.activeContact = i
+            if(this.activeContact > 0) {
+                this.areaTextDisabled= false
+            }
         },
         getLastMessage(messages) {
             // console.log(messages)
@@ -253,8 +258,7 @@ createApp({
                 status: 'received'
             }
             this.contacts[index].messages.push(structureMssageUser)
-
-        }
+        },
 
     },
     mounted() {
