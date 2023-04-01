@@ -74,13 +74,17 @@
 										</div>
 										<div class="info_User col d-flex justify-content-between ">
 											<div>
-												<span>{{contact.name}}</span>
-												<span class="d-block txt_gray">ultimo {{getLastMessage(contact.messages)
-													}} </span>
+												<span >{{contact.name}}</span>
+												<span v-if="contact.visible" class="d-block txt_gray">ultimo messaggio {{getLastMessage(contact.messages, index)}} 
+												</span>
+												<span v-else class="d-block txt_gray">Non ci sono nuovi messaggi</span>
+
 											</div>
 
 											<div class="icon_option fs-6 txt_gray">
-												<span>{{getHourlastMessage(contact.messages)}}</span>
+												<span v-if="contact.visible">
+													{{getHourlastMessage(contact.messages)}}
+												</span>
 											</div>
 										</div>
 									</div>
@@ -102,7 +106,7 @@
 								<div class="info_User col d-flex justify-content-between align-items-center">
 									<div>
 										<span>{{contacts[activeContact].name}}</span>
-										<span class="d-block txt_gray">Ultimo accesso oggi alle ore
+										<span v-if="contacts[activeContact].visible" class="d-block txt_gray">Ultimo accesso oggi alle ore
 											{{getHourlastMessage(contacts[activeContact].messages)}} </span>
 									</div>
 									<div class="icon_option fs-4">
@@ -117,14 +121,14 @@
 						<!-- main chat -->
 						<div class="main_chat">
 							<!-- ciclo ull'array message, successivamente in base se si tratta di status send o received gli assegno una classe per farlo soparire a destra con background verde(inviato) o sinistra con background bianco(ricevuto) -->
-							<div class="msg" v-if="activeContact !== - 1"
+							<div class="msg" v-if="verifyMsg()"
 								 v-for="(message, index) in contacts[activeContact].messages"
 								 :class="message.status === 'sent' ? 'sent' : 'received'">
 								 <div class="userMess position-relative" @mouseover="overMessage()" @mouseleave="leaveMessage()" >
 									 <span class="pe-5">
 										 {{message.message}}
 									 </span>
-									 <span class="txt_gray hour p-1 fs-6">
+									 <span v-if="contact.visible" class="txt_gray hour p-1 fs-6">
 										{{getHourlastMessage(contacts[activeContact].messages)}} 
 									 </span>
 									 <div>
@@ -132,8 +136,8 @@
 										<i class="fa-solid fa-ellipsis-vertical px-2"></i>
 										</button>
 										<ul class="dropdown-menu">
-										  <li><button class="dropdown-item" type="button">Maggiori informazioni</button></li>
-										  <li><button class="dropdown-item" type="button">Elimina messaggio</button></li>
+										  <li><button class="dropdown-item" type="button" >Maggiori informazioni</button></li>
+										  <li><button class="dropdown-item" type="button" @click="delateMessage(index)">Elimina messaggio</button></li>
 										</ul>
 									  </div>
 								 </div>
