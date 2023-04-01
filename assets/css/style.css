@@ -35,7 +35,6 @@ img {
 
 .container {
     width: 1500px;
-    height: 1000px;
     position: relative;
 }
 
@@ -54,7 +53,7 @@ img {
 }
 
 .sidebar_contact {
-    height: 100%;
+    height: calc(100vh - 200px);
     max-width: 40%;
     background-color: var(--bgSlideBarContact--);
 }
@@ -127,7 +126,7 @@ img {
 .msg.sent {
     display: flex;
     justify-content: end;
-    padding: 2rem 5% 0rem 30%;
+    padding: 1rem 5% 1rem 30%;
 }
 .msg.sent span {
     background-color: var(--bgMessageSent--);
@@ -138,7 +137,7 @@ img {
 .msg.received {
     display: flex;
     justify-content: start;
-    padding: 2rem 30% 0rem 5%;
+    padding: 1rem 30% 1rem 5%;
 }
 .msg.received span {
     background-color: var(--bgMessageReceved);
@@ -147,9 +146,11 @@ img {
 }
 
 
-
-
 /* #reagio chat */
+.chat_container {
+    height: calc(100vh - 200px);
+}
+
 .header_chat {
     background-color: var(--bgSlideBarContact--);
     height: 80px;

@@ -233,13 +233,15 @@ createApp({
         randomContactArrayNumber() {
             let min = 0
             let max = 7
-            const random =  Math.floor(Math.random() * (max - min + 1) ) + min;
+            const random =  Math.floor(Math.random() * (max - min ) ) + min;
+            console.log('contact array', random)
             return random;
         },
         randomMessageArrayNumber() {
             let min = 0
             let max = this.contacts[this.randomContactArrayNumber()].messages.length
             const random =  Math.floor(Math.random() * (max - min ) ) + min;
+            console.log('message array', random)
             return random;
         },
 
