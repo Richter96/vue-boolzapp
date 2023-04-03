@@ -75,7 +75,7 @@
 										<div class="info_User col d-flex justify-content-between ">
 											<div>
 												<span >{{contact.name}}</span>
-												<span v-if="contact.messages.length !== 0" class="d-block txt_gray">ultimo messaggio {{getLastMessage(contact.messages, index)}} 
+												<span v-if="contact.messages.length !== 0" class="d-block txt_gray">ultimo messaggio: {{getLastMessage(contact.messages, index)}} 
 												</span>
 												<span v-else class="d-block txt_gray">Non ci sono nuovi messaggi</span>
 
