@@ -314,4 +314,10 @@ createApp({
         console.log(this.verifyMsg());
         this.filterUser()
     },
+    beforeUpdate() {
+        this.filterUser()
+        
+    },
+    updated() {
+    },
 }).mount('#app')
