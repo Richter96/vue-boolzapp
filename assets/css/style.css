@@ -18,6 +18,9 @@
 
 /* #endregion debug */
 
+body {
+    overflow: hidden;
+}
 
 header {
     height: 200px;

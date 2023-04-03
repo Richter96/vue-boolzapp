@@ -6,6 +6,7 @@ createApp({
             activeContact: -1,
             userMessage: '',
             areaTextDisabled: true,
+            searchUser:'',
             option:'',
             d_none: true ,
             contacts: [
@@ -176,11 +177,11 @@ createApp({
     },
 
     methods: {
-        verifyNoMessage(){
+       /*  verifyNoMessage(){
             if(this.contacts[this.activeContact].messages.length === 0){
                 this.contacts[this.activeContact].visible = false
             }
-        },
+        }, */
         verifyMsg(){
             if(this.activeContact !== -1){
                 return true 
@@ -289,12 +290,28 @@ createApp({
             this.contacts[index].messages.push(structureMssageUser)
         },
 
+
+        filterUser() {
+            this.contacts.forEach(contatto => {
+                if(contatto.name.toLowerCase().includes(this.searchUser.toLowerCase())){
+                    console.log('è inclusa ' + contatto.name);
+                    contatto.visible = true
+                } else { 
+                    console.log('non è incluso ' + contatto.name)
+                    contatto.visible = false
+                    console.log(contatto.visible + contatto.name);
+                }
+
+            });
+          },
+
+
     },
     mounted() {
         // console.log(this.currentHour())
         // console.log(this.randomContactArrayNumber())
         // console.log(this.randomMessageArrayNumber())
         console.log(this.verifyMsg());
-
+        this.filterUser()
     },
 }).mount('#app')
