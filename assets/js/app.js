@@ -204,7 +204,7 @@ createApp({
         selectImage(i) {
             console.log(i);
             this.activeContact = i
-            if(this.activeContact > 0) {
+            if(this.activeContact >= 0) {
                 this.areaTextDisabled= false
             }
         },
