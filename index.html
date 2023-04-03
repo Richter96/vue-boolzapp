@@ -75,14 +75,14 @@
 										<div class="info_User col d-flex justify-content-between ">
 											<div>
 												<span >{{contact.name}}</span>
-												<span v-if="contact.visible" class="d-block txt_gray">ultimo messaggio {{getLastMessage(contact.messages, index)}} 
+												<span v-if="contact.messages.length !== 0" class="d-block txt_gray">ultimo messaggio {{getLastMessage(contact.messages, index)}} 
 												</span>
 												<span v-else class="d-block txt_gray">Non ci sono nuovi messaggi</span>
 
 											</div>
 
 											<div class="icon_option fs-6 txt_gray">
-												<span v-if="contact.visible">
+												<span v-if="contact.messages.length !== 0">
 													{{getHourlastMessage(contact.messages)}}
 												</span>
 											</div>
@@ -106,7 +106,7 @@
 								<div class="info_User col d-flex justify-content-between align-items-center">
 									<div>
 										<span>{{contacts[activeContact].name}}</span>
-										<span v-if="contacts[activeContact].visible" class="d-block txt_gray">Ultimo accesso oggi alle ore
+										<span v-if="contacts[activeContact].messages.length !== 0" class="d-block txt_gray">Ultimo accesso oggi alle ore
 											{{getHourlastMessage(contacts[activeContact].messages)}} </span>
 									</div>
 									<div class="icon_option fs-4">
@@ -128,7 +128,7 @@
 									 <span class="pe-5">
 										 {{message.message}}
 									 </span>
-									 <span v-if="contacts[activeContact].visible" class="txt_gray hour p-1 fs-6">
+									 <span v-if="contacts[activeContact].messages.length !==0" class="txt_gray hour p-1 fs-6">
 										{{getHourlastMessage(contacts[activeContact].messages)}} 
 									 </span>
 									 <div>

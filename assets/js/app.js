@@ -177,7 +177,7 @@ createApp({
     },
 
     methods: {
-       /*  verifyNoMessage(){
+        /* verifyNoMessage(){   verifica non piu cencessaria
             if(this.contacts[this.activeContact].messages.length === 0){
                 this.contacts[this.activeContact].visible = false
             }
@@ -290,16 +290,15 @@ createApp({
             this.contacts[index].messages.push(structureMssageUser)
         },
 
-
         filterUser() {
             this.contacts.forEach(contatto => {
                 if(contatto.name.toLowerCase().includes(this.searchUser.toLowerCase())){
-                    console.log('è inclusa ' + contatto.name);
+                    // console.log('è inclusa ' + contatto.name);
                     contatto.visible = true
                 } else { 
-                    console.log('non è incluso ' + contatto.name)
+                    // console.log('non è incluso ' + contatto.name)
                     contatto.visible = false
-                    console.log(contatto.visible + contatto.name);
+                    // console.log(contatto.visible + contatto.name);
                 }
 
             });
@@ -311,13 +310,11 @@ createApp({
         // console.log(this.currentHour())
         // console.log(this.randomContactArrayNumber())
         // console.log(this.randomMessageArrayNumber())
-        console.log(this.verifyMsg());
+        // console.log(this.verifyMsg());
         this.filterUser()
     },
     beforeUpdate() {
         this.filterUser()
-        
     },
-    updated() {
-    },
+
 }).mount('#app')
