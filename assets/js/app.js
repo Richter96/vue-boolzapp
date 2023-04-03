@@ -177,7 +177,7 @@ createApp({
     },
 
     methods: {
-        /* verifyNoMessage(){   verifica non piu cencessaria
+        /* verifyNoMessage(){   verifica non piu necessaria, ho inserito direttamente if in html.
             if(this.contacts[this.activeContact].messages.length === 0){
                 this.contacts[this.activeContact].visible = false
             }
@@ -198,7 +198,7 @@ createApp({
         delateMessage(i){
             console.log(i);
             this.contacts[this.activeContact].messages.splice(i, 1)
-            this.verifyNoMessage()
+            // this.verifyNoMessage() non piu necessario
         },
 
         selectImage(i) {
