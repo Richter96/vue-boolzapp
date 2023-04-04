@@ -202,7 +202,7 @@ createApp({
         },
 
         selectImage(i) {
-            console.log(i);
+            // console.log(i);
             this.activeContact = i
             if(this.activeContact >= 0) {
                 this.areaTextDisabled= false
@@ -241,8 +241,8 @@ createApp({
             const d = new Date();
             let hour = d.getHours()
             let minut = d.getMinutes()
-            console.log(hour);
-            console.log(minut);
+            // console.log(hour);
+            // console.log(minut);
             let currentTime = `${hour}:${minut}`
             return currentTime;
         },
@@ -267,23 +267,30 @@ createApp({
         },
         randomContactArrayNumber() {
             let min = 0
-            let max = this.contacts.length
-            return  Math.floor(Math.random() * (max - min + 1) ) + min;
+            let max = this.contacts.length - 1
+            const arrayRandomContact = Math.floor(Math.random() * (max - min + 1) ) + min;
+            console.log('numero array contact ' + arrayRandomContact)
+            return  arrayRandomContact
         },
-        randomMessageArrayNumber() {
+        randomMessageArrayNumber(randomContact) {
             let min = 0
-            let max = this.contacts[this.randomContactArrayNumber()].messages.length
+            let max = this.contacts[randomContact].messages.length - 1
             const random =  Math.floor(Math.random() * (max - min ) ) + min;
-            console.log('numero array contact ' + this.randomContactArrayNumber())
             console.log('message array', random)
             return random;
         },
 
         autoMessage(index) {
+
+
+
+
             console.log('messaggio automatico');
+            const randomContact = this.randomContactArrayNumber()
+            const randomMessage = this.randomMessageArrayNumber(randomContact)
             const structureMssageUser = {
                 date: `${this.currentDate()}, ${this.currentHour()}`,
-                message: this.contacts[this.randomContactArrayNumber()].messages[this.randomMessageArrayNumber()].message,
+                message: this.contacts[randomContact].messages[randomMessage].message,
                 status: 'received'
             }
             this.contacts[index].messages.push(structureMssageUser)
